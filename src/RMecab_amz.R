@@ -37,4 +37,4 @@ for (i in 1:(rmecab_result %>% length())) {
 }
 write(rmecab_result_text, file = "/Users/nishiguchi/dev/rlang_mokumoku/rmecab_text_amz_list.bin", append = TRUE)
 
-model_amz = train_word2vec("/Users/nishiguchi/dev/rlang_mokumoku/rmecab_text_amz_list.bin", vectors = 30, window = 4, threads = 2)
+model_amz = train_word2vec("/Users/nishiguchi/dev/rlang_mokumoku/rmecab_text_amz_list.bin", vectors = 1000, window = 4, threads = 2)
