@@ -1,7 +1,7 @@
 library(tidyverse)
 library(ggplot2)
 
-setwd("~/dev/analyse_speed_of_answer/")
+setwd("~/dev/rlang_mokumoku/src/analyse_phone/data/")
 dirs = list.dirs(".")
 
 df = NULL
@@ -31,4 +31,6 @@ df = as.data.frame(df)
 # data.frameキャストすると、なぜかsecがfactorになるので、numericにキャストする
 df$sec = as.numeric(as.character(df$sec))
 
-# TODO 取得した平均値をggplot2のgeom_tileでなんないい感じにヒートマップで出す
+ggplot(data=as.data.frame(df), aes(x=date, y=sec, color=phonenumber)) +
+  geom_tile(aes(fill = phonenumber)) +
+  geom_text(aes(label = sec), color = "white")

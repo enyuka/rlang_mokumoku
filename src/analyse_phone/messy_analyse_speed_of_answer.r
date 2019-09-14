@@ -2,7 +2,7 @@ library(tidyverse)
 library(ggplot2)
 library(hash)
 
-setwd("/Users/nishiguchi/dev/analyse_speed_of_answer/")
+setwd("~/dev/rlang_mokumoku/src/analyse_phone/data/")
 dirs = list.dirs(".")
 results = hash()
 filenames = list()
@@ -41,6 +41,5 @@ for (i in 1:length(keys)) {
 # cbindで渡す列名に変数を設定できないので、後から設定している
 colnames(df) = keys
 
-ggplot(df, aes(x,y))
-
-# TODO 取得した平均値をggplot2のgeom_tileでなんないい感じにヒートマップで出す
+# 乱雑データが生成されるので、ggplotを利用できない
+# ggplot(df, aes(x,y))
