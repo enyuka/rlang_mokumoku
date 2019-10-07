@@ -19,8 +19,8 @@ library(wordVectors)
 
 ## 生成されたファイルを確認するには
 # file.show(tf)
-
-file_name = "/Users/nishiguchi/dev/rlang_mokumoku/amz_all_kashi.txt"
+getwd("~/dev/rlang_mokumoku/src/amz/")
+file_name = "amz_all_kashi.txt"
 all_kashi = ""
 for (i in 1:(url_df$kashi %>% length())) {
   all_kashi = paste(all_kashi, url_df$kashi[i], sep = " ")
@@ -35,6 +35,6 @@ for (i in 1:(rmecab_result %>% length())) {
     rmecab_result_text = paste(rmecab_result_text, as.character(tmp_rmecab_result[1]), sep = " ")
   }
 }
-write(rmecab_result_text, file = "/Users/nishiguchi/dev/rlang_mokumoku/rmecab_text_amz_list.bin", append = TRUE)
+write(rmecab_result_text, file = "rmecab_text_amz_list.bin", append = TRUE)
 
-model_amz = train_word2vec("/Users/nishiguchi/dev/rlang_mokumoku/rmecab_text_amz_list.bin", vectors = 1000, window = 4, threads = 2)
+model_amz = train_word2vec("rmecab_text_amz_list.bin", vectors = 1000, window = 4, threads = 2)
