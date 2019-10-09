@@ -3,3 +3,6 @@
 *.Rproj
 .RData
 .Rhistory
+*.txt
+*.bin
+*.png
